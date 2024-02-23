@@ -28,11 +28,12 @@ function onFormSubmit(e) {
     checkupInput();
     return;
   }
+
+  refs.listEl.innerHTML = '';
   searchImg(search)
     .then(data => {
       if (data.hits.length === 0) {
         notFound();
-        refs.listEl.innerHTML = '';
       } else {
         renderImg(data);
         lightbox.on('show.simplelightbox');
