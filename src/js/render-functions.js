@@ -4,7 +4,7 @@ import "izitoast/dist/css/iziToast.min.css";
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-
+import {refs} from "../main";
 
 
 export function checkupInput() {
@@ -55,17 +55,22 @@ export function checkupInput() {
         }
       )
       .join('\n');
-      imagesList.innerHTML = markup;
-    const lightbox = new SimpleLightbox('.gallery a', options);
-    lightbox.on('show.simplelightbox');
-    lightbox.refresh();
+ 
   }
 
-  const options = {
+  export function renderImg(data) {
+    const markup = imgTemplate(data);
+    refs.gallery.insertAdjacentHTML('afterbegin', markup);
+  
+    
+  }
+ export const lightbox = new SimpleLightbox('.gallery a', {
     captions: true,
     captionSelector: 'img',
-    captionType: 'attr',
-    captionsData: 'alt',
     captionPosition: 'bottom',
+    captionsData: 'alt',
     captionDelay: 250,
-};
+    captionType: 'attr',
+  });
+  lightbox.on('show.simplelightbox');
+  lightbox.refresh();
