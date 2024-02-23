@@ -9,7 +9,6 @@ import {refs} from "../main";
 
 export function checkupInput() {
     iziToast.warning({
-    //   title: 'Caution',
       message: 'Please, enter something to search!',
       position: 'topRight',
     });
@@ -17,7 +16,6 @@ export function checkupInput() {
   
   export function notFound() {
     iziToast.warning({
-    //   title: 'Caution',
       message:
         'Sorry, there are no images matching your search query. Please try again!',
       position: 'topRight',
