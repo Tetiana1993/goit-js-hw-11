@@ -10,7 +10,7 @@ import { lightbox } from './js/render-functions';
 
 export const refs = {
     formEl: document.querySelector('.form'),
-    inputEl: document.querySelector('.saerch-img'),
+    inputEl: document.querySelector('input[name="text"]'),
     listEl: document.querySelector('.gallery'),
     spanEl: document.querySelector('.loader')
 };
@@ -38,7 +38,7 @@ function onFormSubmit(e) {
         lightbox.on('show.simplelightbox');
         lightbox.refresh();
       }
-      refs.loader.style.display = 'none';
+      refs.spanEl.style.display = 'none';
     })
     .catch(err => console.log(err));
 

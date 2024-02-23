@@ -23,3 +23,42 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.gallery-img {
+  padding-top: 24px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1128px;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  width: calc((100% - 72px) / 4);
+  height: 100%;
+}
+
+.gallery-descr {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.gallery-descr > p {
+  margin: 0;
+  text-align: center;
+  font-size: small;
+}
+
+.loader {
+  margin: 0 auto;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #0daeee;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}

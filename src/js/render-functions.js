@@ -60,7 +60,7 @@ export function checkupInput() {
 
   export function renderImg(data) {
     const markup = imgTemplate(data);
-    refs.gallery.insertAdjacentHTML('afterbegin', markup);
+    refs.listEl.insertAdjacentHTML('afterbegin', markup);
   
     
   }
