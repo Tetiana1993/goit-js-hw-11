@@ -4,10 +4,6 @@ import { checkupInput, notFound } from './js/render-functions';
 import { renderImg } from './js/render-functions';
 import { lightbox } from './js/render-functions';
 
-
-
-
-
 export const refs = {
     formEl: document.querySelector('.form'),
     inputEl: document.querySelector('input[name="text"]'),
@@ -15,13 +11,17 @@ export const refs = {
     spanEl: document.querySelector('.loader')
 };
 
-refs.spanEl.style.display = 'none';
-
 refs.formEl.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
   e.preventDefault();
   const search = e.target.elements.text.value.trim();
+  
+  if (!search.trim().length) {
+    refs.spanEl.style.display = 'none';
+    return;
+  }
+  
   refs.spanEl.style.display = 'block';
 
   if (!search) {

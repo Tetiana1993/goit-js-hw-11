@@ -20,7 +20,6 @@ export function checkupInput() {
         'Sorry, there are no images matching your search query. Please try again!',
       position: 'topRight',
     });
-    refs.spanEl.style.display = 'none';
   }
 
   export function imgTemplate(data) {
